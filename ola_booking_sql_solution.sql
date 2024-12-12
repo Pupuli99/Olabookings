@@ -1,10 +1,10 @@
 1. Retrieve all successful bookings:
 CREATE VIEW Successful_Bookings AS
-select *
-from bookings where booking_status = 'success';
+SELECT *
+FROM bookings WHERE booking_status = 'success';
 -------------------all successful bookings----------------------
 SHOW TABLES;
-select * from successful_bookings
+SELECT * FROM successful_bookings
 
 2. Find the average ride distance for each vehicle type:
 CREATE VIEW ride_distance_for_each_vehicle As
@@ -12,8 +12,8 @@ SELECT Vehicle_Type, AVG(Ride_Distance) as avg_distance
 FROM bookings
 GROUP BY Vehicle_Type;
 -------------------average ride distance for each vehicle type----------------------
-show tables
-select * from ride_distance_for_each_vehicle
+SHOW TABLES;
+SELECT * FROM ride_distance_for_each_vehicle
 
 3. Get the total number of cancelled rides by customers:
 CREATE VIEW  canceled_rides_by_customers As
@@ -21,7 +21,6 @@ SELECT COUNT(*)
 FROM bookings 
 WHERE Booking_Status = 'canceled by Customer';
 -------------------total number of cancelled rides by customers----------------------
-
 SHOW TABLES
 SELECT * FROM canceled_rides_by_customers
 
